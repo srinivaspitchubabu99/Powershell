@@ -1,0 +1,82 @@
+# WSL Installer/Remover Script
+
+This PowerShell script allows you to **install** or **remove** Windows Subsystem for Linux (WSL) on **Windows 10**, **Windows 11**, and **Windows Server**. The script detects the operating system version, enables or disables required features, installs the Linux kernel and a user-selected Linux distribution, or removes WSL and its components, including the installed distributions.
+
+## Features
+
+- **Install WSL**: Automatically installs WSL along with a Linux distribution of your choice.
+- **Remove WSL**: Uninstalls WSL, the Virtual Machine Platform, and optionally removes all installed Linux distributions.
+- Works with **Windows 10**, **Windows 11**, and **Windows Server**.
+- Automatically detects your operating system version and applies the correct steps for installation or removal.
+
+## Prerequisites
+
+- **Windows 10 Version 19041 (20H1) or later**, **Windows 11**, or **Windows Server 2019/2022**.
+- **Administrator privileges**: Run PowerShell as Administrator to enable/disable features.
+
+## Usage
+
+### 1. Clone or Download the Repository
+Clone this repository or download the script to your local machine:
+```bash
+git clone https://github.com/yourusername/wsl-installer-script.git
+```
+
+### 2. Running the Script
+
+#### To Install WSL
+1. Open **PowerShell** as Administrator.
+2. Navigate to the directory where the script is located.
+3. Run the script:
+   ```powershell
+   .\Install-Remove-WSL.ps1
+   ```
+4. Choose the "Install" option when prompted.
+5. Select the Linux distribution you want to install (Ubuntu, Debian, Kali-Linux, SUSE, OpenSUSE-Leap).
+6. Restart your system when the installation completes.
+
+#### To Remove WSL
+1. Open **PowerShell** as Administrator.
+2. Navigate to the directory where the script is located.
+3. Run the script:
+   ```powershell
+   .\Install-Remove-WSL.ps1
+   ```
+4. Choose the "Remove" option when prompted.
+5. You will be asked whether to remove all installed Linux distributions. Select "Y" to remove or "N" to keep them.
+6. Restart your system when the removal completes.
+
+### Supported Linux Distributions
+
+The script allows you to install the following distributions:
+- Ubuntu
+- Debian
+- Kali Linux
+- SUSE
+- OpenSUSE Leap
+
+## Script Overview
+
+- **Get-OSVersion**: Detects the operating system version and ensures compatibility with the script.
+- **Install-WSL**: Installs WSL and enables necessary components, including the Virtual Machine Platform, and allows you to choose a Linux distribution for installation.
+- **Remove-WSL**: Uninstalls WSL, the Virtual Machine Platform, and optionally removes all Linux distributions.
+- **Virtual Machine Platform**: Enables or disables this feature, which is required for WSL 2.
+
+## Important Notes
+
+- **For Windows 10 and 11**: The script automatically installs or uninstalls the WSL kernel update package during installation or removal.
+- **For Windows Server**: Only WSL 1 is supported; WSL 2 is not available on server versions.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+### Disclaimer
+
+This script is provided "as is," without warranty of any kind. Please ensure you understand the script before running it on your system.
+
+---
+
+This `README.md` provides an overview of how to use the script, as well as key features and instructions for both installing and removing WSL. It is ready to be included in your GitHub repository.

@@ -1,0 +1,87 @@
+# WSL Installation Script
+
+This PowerShell script automates the installation of the Windows Subsystem for Linux (WSL) on Windows 10 and Windows 11. It enables the WSL feature, sets WSL to version 2, and allows users to select their desired Linux distribution for installation.
+
+## Features
+
+- Enable WSL feature
+- Set WSL version to 2
+- List available Linux distributions
+- User input for selecting a distribution
+
+## Prerequisites
+
+- Windows 10 version 1903 or later, or Windows 11
+- Administrator privileges to run the script
+
+## Installation
+
+1. **Download the Script**
+   - Clone this repository or download the script file `InstallWSL.ps1`.
+
+2. **Set the PowerShell Execution Policy**
+   - Open PowerShell as an administrator:
+     - Search for "PowerShell" in the Start menu.
+     - Right-click on "Windows PowerShell" and select "Run as administrator".
+   - Set the execution policy to allow script execution:
+     ```powershell
+     Set-ExecutionPolicy RemoteSigned
+     ```
+     If prompted, type `Y` and press Enter to confirm.
+
+3. **Run the Script**
+   - Navigate to the directory where you saved the script:
+     ```powershell
+     cd C:\Path\To\Your\Script
+     ```
+   - Execute the script:
+     ```powershell
+     .\InstallWSL.ps1
+     ```
+
+4. **Select a Distribution**
+   - The script will list available Linux distributions. Enter the name of the distribution you want to install (e.g., Ubuntu, Debian).
+
+## Example Output
+
+```plaintext
+Enabling Windows Subsystem for Linux...
+Setting WSL version to 2...
+Available Linux distributions:
+   Ubuntu
+   Debian
+   Kali-Linux
+   Fedora
+   ...
+
+Enter the name of the distribution you want to install (e.g., Ubuntu, Debian, etc.): Ubuntu
+Installing Ubuntu...
+WSL installation completed. Please restart your computer.
+```
+
+## Important Notes
+
+- **Execution Policies:**
+  - `Restricted`: No scripts can be run. This is the default setting.
+  - `AllSigned`: Only scripts signed by a trusted publisher can be run.
+  - `RemoteSigned`: Scripts created locally can be run, and downloaded scripts must be signed.
+  - `Unrestricted`: All scripts can be run.
+
+- **Revert Execution Policy (Optional):**
+  After running your script, you may want to set the execution policy back to its original state:
+  ```powershell
+  Set-ExecutionPolicy Restricted
+  ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- [Microsoft Documentation on WSL](https://docs.microsoft.com/en-us/windows/wsl/)
+```
+
+### Instructions for Use:
+- Copy the updated content into your `README.md` file in your GitHub repository.
+- Make sure to customize any sections to better fit your project or add additional information as needed.
